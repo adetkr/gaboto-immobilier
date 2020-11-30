@@ -1,1 +1,90 @@
-show.html.erb
+<section id="flat" class="p-5 my-5">
+  <div class="container-fluid">
+    <p class="text-primary h6"><%= @flat.user %></p>
+    <h1 class="pb-3 h2"><%= @flat.description %>
+    <% if @flat.user == current_user  %>
+      <%= link_to edit_flat_path(@flat.id) , class: "btn btn-primary" do %>
+      <i class="far fa-edit"></i>
+      <% end %>
+    <% end %>
+    </h1>
+    <div class="row">
+      <div class="col-7">
+        <div class="mb-5">
+          <%= render 'shared/light-gallery', flat: @flat %>
+        </div>
+
+        <!-- presentation -->
+        <div id="presentation" class="bg-white-smoke rounded-lg p-4 mb-5">
+          <h3 class="mb-2 h5"><%= @flat.surface %>m<sup>2</sup> - <%= @flat.rooms %> rooms</h3>
+          <p><%= @flat.description %></p>
+        </div>
+
+        <!--  Equipment -->
+        <div id="equipment" class="bg-white-smoke rounded-lg p-4 mb-5">
+          <h3 class="mb-4 h5">Equipment</h3>
+          <div class="d-flex flex-wrap">
+            <% Flat::LOCALITY.each do |equipment| %>
+              <div class="equipment col-4 pl-0 mb-3 <%= equipment %>">
+                <%= equipment %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <!--  Map -->
+        <div id="map" class="rounded-lg"
+          style="width: 100%; height: 350px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+     </div>
+
+
+      <!--  User presentation -->
+      <div class="pl-5 col-5" data-controller="like">
+        <div class="col-4 bg-white-smoke rounded-lg p-4 mb-5 mr-3 position-fixed">
+           <div id="info" class="d-flex">
+            <div>
+                <% if @flat.user.photo.attached? %>
+                  <%= cl_image_tag @flat.user.photo.key, class: "avatar mr-2 rounded-circle" %>
+                <% else %>
+                  <%= image_tag "noavatar.png", height: 140, width: 140 , crop: :fill, class:"avatar rounded-circle mr-2" %>
+                <% end %>
+           </div>
+            <div class="flex-grow-1">
+              Proposed by:
+              <br>
+              <span class="text-primary font-weight-normal"><%= @flat.user %></span>
+            </div>
+           </div>
+           <hr>
+           <div>
+             <p>
+               <%= @flat.user %>
+             </p>
+             <p>
+               <span class="text-primary font-weight-bold">Availability of the apartment</span>
+               <br>
+               <i class="fas fa-calendar-alt text-secondary mr-1"></i> September 2021 - August 2022 (Flexible Date)
+             </p>
+           </div>
+           <hr class="mt-5">
+           <div class="d-flex justify-content-between align-items-center">
+            <div id="like">
+
+                  <button id = "like" data-user-id = "<%= current_user.id %>" data-flat-id = "<%= @flat.id %>" class="btn-style-01 text-uppercase py-2 px-5 rounded-lg" data-action="click->like#likeFlat"> Like <i class="fas fa-star ml-1"></i></button>
+
+
+            </div>
+            <div id="price">
+              <span class="h4"><%= @flat.price %> €</span><span>/mo</span>
+            </div>
+           </div>
+        </div>
+      </div>
+      </div>
+      <!--  /User presentation -->
+    </div>
+  </div>
+</section>

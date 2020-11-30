@@ -1,27 +1,113 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <%= link_to "Déposer votre annonce", new_flat_path, class: "btn btn-flat" %>
+    <div>
+      <h1>GABOTO Immobilier</h1>
+      <p>Votre agence immobilière en ligne</p>
+      <%= link_to "Déposer votre annonce", new_flat_path, class: "btn btn-flat" %>
+    </div>
+    <div class="bg-white shadow-lg py-3 px-4 rounded-lg">
+      <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
+        <form class="">
+          <div class="d-flex align-items-center">
+              <input placeholder= "Where are you going to study ?" class=" form-control form-control-lg border-0 py-3 m-0" type="text" name="search[query]" id="flat_address" >
+            <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 col-3 ml-4 mb-0">Search</button>
+          </div>
+        </form>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="container">
+<section id="#howItWorks">
+  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+<div class="container-fluid bg-white-smoke p-5">
 
-  <div class="row">
-
-    <div class="col-12 col-lg-4">
-      <%= render 'shared/card' %>
+    <div class="row">
+      <div class="col-md-3 p-4 ">
+          <div >
+            <%= image_tag "building.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg">I offer my <span class="text-secondary">appartment</span> for exchange with a foreign student</h5>
+            <p class="lead">I provide informations about my flat, amenities, equipment and avaibilities</p>
+          </div>
+      </div>
+      <div class="col-md-3  p-4 ">
+           <div >
+            <%= image_tag "search.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg">I am looking for a <span class="text-secondary">new appartment</span> in the city where I am going to study</h5>
+            <p class="lead">I like all flats matching with my requests</p>
+          </div>
+      </div>
+      <div class="col-md-3  p-4">
+          <div >
+            <%= image_tag "heart.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg"><span class="text-secondary">It's a Match !</span> My appartment has been liked by someone that I have also liked his flat! </h5>
+            <p class="lead">I start a chat with the person who target my flat. We agree to seal the deal !</p>
+          </div>
+      </div>
+       <div class="col-md-3  p-4">
+          <div >
+            <%= image_tag "key.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg"> We sign a <span class="text-secondary">contract of agreement</span> both of us agree to exchange our appartment</h5>
+            <p class="lead"> I rent my flat and get a new one abraod ! Thanks FlaTender </p>
+          </div>
+      </div>
     </div>
+</section>
 
-    <div class="col-12 col-lg-4">
-      <%= render 'shared/card' %>
+<section id="#howItWorks">
+  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+<div class="container-fluid bg-white-smoke p-5">
+
+    <div class="row">
+      <div class="col-md-3 p-4 ">
+          <div >
+            <%= image_tag "building.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg">I offer my <span class="text-secondary">appartment</span> for exchange with a foreign student</h5>
+            <p class="lead">I provide informations about my flat, amenities, equipment and avaibilities</p>
+          </div>
+      </div>
+      <div class="col-md-3  p-4 ">
+           <div >
+            <%= image_tag "search.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg">I am looking for a <span class="text-secondary">new appartment</span> in the city where I am going to study</h5>
+            <p class="lead">I like all flats matching with my requests</p>
+          </div>
+      </div>
+      <div class="col-md-3  p-4">
+          <div >
+            <%= image_tag "heart.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg"><span class="text-secondary">It's a Match !</span> My appartment has been liked by someone that I have also liked his flat! </h5>
+            <p class="lead">I start a chat with the person who target my flat. We agree to seal the deal !</p>
+          </div>
+      </div>
+       <div class="col-md-3  p-4">
+          <div >
+            <%= image_tag "key.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg"> We sign a <span class="text-secondary">contract of agreement</span> both of us agree to exchange our appartment</h5>
+            <p class="lead"> I rent my flat and get a new one abraod ! Thanks FlaTender </p>
+          </div>
+      </div>
     </div>
+</section>
 
-    <div class="col-12 col-lg-4">
-      <%= render 'shared/card' %>
+<section id="#howItWorks">
+  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+<div class="container-fluid bg-white-smoke p-5">
+
+    <div class="row">
+      <div class="col-md-3 p-4 ">
+          <%= render 'shared/card' %>
+      </div>
+      <div class="col-md-3  p-4 ">
+          <%= render 'shared/card' %>
+      </div>
+      <div class="col-md-3  p-4">
+          <%= render 'shared/card' %>
+      </div>
+       <div class="col-md-3  p-4">
+          <%= render 'shared/card' %>
+      </div>
     </div>
+</section>
 
-  </div>
-</div>

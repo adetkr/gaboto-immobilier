@@ -1,15 +1,22 @@
-<%= simple_form_for(flat) do |f| %>
-  <!-- [...] -->
-  <%= f.input :description %>
-  <%= f.input :type , as: :select , collection: Flat::TYPE %>
+<div class="container">
+  <div class="row">
+    <div class="form-login col-xs-12 col-sm-8">
+      <%= simple_form_for(flat) do |f| %>
+        <!-- [...] -->
+        <%= f.input :description %>
+        <%= f.input :operation_type , as: :select , collection: Flat::TYPE %>
 
-  <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE %>
-  <%= f.input :address %>
-  <%= f.input :rooms %>
-  <%= f.input :pieces %>
-  <%= f.input :surface %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true , class: 'd-none'} , label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'%>
-  <%= f.submit "Add a new flat", :class => "btn btn-flat"  %>
-  <!-- [...] -->
-<% end %>
+        <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE %>
+        <%= f.input :address %>
+        <%= f.input :rooms %>
+        <%= f.input :pieces %>
+        <%= f.input :surface %>
+        <%= f.input :price %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true , class: 'd-none'} , label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'%>
+        <%= f.submit "Add a new flat", :class => "btn btn-flat"  %>
+        <!-- [...] -->
+      <% end %>
+    </div>
+  </div>
+</div>
+
