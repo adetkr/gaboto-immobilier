@@ -6,7 +6,7 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
-
+    @markers = nil
   end
 
   def create

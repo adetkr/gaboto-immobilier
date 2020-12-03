@@ -1,12 +1,14 @@
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>Maison / Villa</h2>
-      <p>2 pièces | 1 chambre | 60m2</p>
-      <p> Kinshasa</p>
+<%= link_to flat_path(flat) do %>
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= flat.house_type %></h2>
+        <p> <%= flat.pieces %> pièces | <%= flat.rooms  %> chambre | <%= flat.surface %> m2</p>
+        <p> Kinshasa</p>
+      </div>
+      <h2 class="card-trip-pricing"> <%= flat.price %> FCFA</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-    <h2 class="card-trip-pricing">1000 FCFA</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-</div>
+<% end %>

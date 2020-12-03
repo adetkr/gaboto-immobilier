@@ -17,7 +17,7 @@
                   </div>
                 </div>
                 <div class="flex-grow-1 py-3 pl-4 pr-3">
-                  <p class="title h5"><%= flat.title %></p>
+                  <p class="title h5"><%= flat.description %></p>
                   <p> <%= flat.surface %>m<sup>2</sup> - <%= flat.rooms %> rooms</p>
                 <div class="d-flex justify-content-between align-items-center flex-grow-1">
                   <p class="h6 pt-4 z-index-999">
@@ -26,10 +26,10 @@
                     <% else %>
                        <%= image_tag "noavatar.png", height: 40, width: 40 , crop: :fill, class: "rounded-circle border border-white border-2 avatar-index" %>
                     <% end %>
-                    Proposed by <span class="text-primary font-weight-bold"><%= flat.user.name %></span>
+                    Proposed by <span class="text-primary font-weight-bold"><%= flat.user %></span>
 
                   </p>
-                  <p class="price mb-0"><span class="h4 pr"><%= flat.rent %>€</span><span class="">/mo</span>
+                  <p class="price mb-0"><span class="h4 pr"><%= flat.price %>€</span><span class="">/mo</span>
                 </div>
                 </div>
               </div>
