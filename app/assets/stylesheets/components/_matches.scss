@@ -1,0 +1,111 @@
+.match-modal-container {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $primary;
+}
+
+.match-modal-container::after {
+    content: ""; // ::before and ::after both require content
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, $primary, $secondary);
+    opacity: .7;
+}
+
+
+.match-modal-content {
+  z-index:2000;
+}
+
+.signature {
+  justify-content: space-between;
+  color: $primary;
+}
+
+.chat-buttons {
+  display: flex;
+  place-items: flex-start;
+}
+
+.message {
+  .sent{
+    justify-content: flex-end !important;
+    .message-content{
+      background-color: $secondary;
+      -webkit-border-radius: 1rem;
+      -webkit-border-bottom-left-radius: 0.3rem;
+      -moz-border-radius: 1rem;
+      -moz-border-radius-bottom-right: 0.3rem;
+      border-radius: 1rem;
+      border-bottom-right-radius: 0.3rem;
+      padding: 1rem;
+
+      .message-text{
+        color: white;
+      }
+      .message-meta{
+        font-size: 80%;
+        color:white;
+      }
+    }
+  }
+}
+
+
+.message {
+  .received{
+    justify-content: flex-start !important;
+    .message-user {
+        font-weight: 600;
+    }
+    .message-content{
+      background-color: $gray-6;
+      -webkit-border-radius: 1rem;
+      -webkit-border-bottom-left-radius: 0.3rem;
+      -moz-border-radius: 1rem;
+      -moz-border-radius-bottom-left: 0.3rem;
+      border-radius: 1rem;
+      border-bottom-left-radius: 0.3rem;
+      padding: 1rem;
+      .message-meta{
+        font-size: 80%;
+        color: black;
+      }
+    }
+  }
+}
+
+
+
+.message.sent-message-container {
+    .avatar-large {
+      display: none;
+    }
+    .message-user{
+      display: none;
+    }
+    .received{
+    justify-content: flex-end !important;
+    .message-content{
+      background-color: $secondary;
+      -webkit-border-radius: 1rem;
+      -webkit-border-bottom-right-radius: 0.3rem;
+      -moz-border-radius: 1rem;
+      -moz-border-radius-bottom-right: 0.3rem;
+      border-radius: 1rem;
+      border-bottom-right-radius: 0.3rem;
+      padding: 1rem;
+      .message-text{
+        color: white;
+      }
+      .message-meta{
+        font-size: 80%;
+        color: white;
+      }
+    }
+  }
+}

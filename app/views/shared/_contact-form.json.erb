@@ -1,0 +1,13 @@
+<%= simple_form_for(contact) do |f| %>
+<!-- [...] -->
+<%= f.input :name %>
+<% if current_user %>
+<%= f.input :email, placeholder: current_user.email  %>
+<% end %>
+
+<%= f.input :number  %>
+<%= f.input :message  %>
+
+<!-- [...] -->
+
+<% end %>

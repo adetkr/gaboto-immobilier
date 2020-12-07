@@ -2,16 +2,35 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
     <div>
-      <h1>GABOTO Immobilier</h1>
-      <p>Votre agence immobilière en ligne</p>
-      <%= link_to "Déposer votre annonce", new_flat_path, class: "btn btn-flat" %>
+      <h1 class="text-center">GABOTO Immobilier</h1>
+      <h6 class="text-center">Votre agence immobilière en ligne</h6>
+
     </div>
     <div class="bg-white shadow-lg py-3 px-4 rounded-lg">
       <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
         <form class="">
-          <div class="d-flex align-items-center">
-              <input placeholder= "Where are you going to study ?" class=" form-control form-control-lg border-0 py-3 m-0" type="text" name="search[query]" id="flat_address" >
-            <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 col-3 ml-4 mb-0">Search</button>
+          <div class="row d-flex align-items-center">
+
+              <div class="col-xs-12 col-sm-3">
+
+              <input placeholder= "Adresse " class=" form-control form-control-lg border-0 py-3 m-0" type="text" name="search[query]" id="flat_address" >
+              </div>
+
+              <div class="col-xs-12 col-sm-3">
+                <%= f.input :operation_type , as: :select , collection: Flat::TYPE, label: false , placeholder: "Catégorie", input_html: {class: 'form-control form-control-lg border-0 py-3 m-0'}%>
+
+              </div>
+              <div class="col-xs-12 col-sm-3">
+
+              <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE , label: false, placeholder: "Type", input_html: {class: 'form-control form-control-lg border-0 py-3 m-0'}%>
+
+              </div>
+              <div class="col-xs-12 col-sm-3">
+
+              <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 mb-0 w-100">Search</button>
+
+              </div>
+
           </div>
         </form>
       <% end %>

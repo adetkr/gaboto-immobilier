@@ -1,4 +1,14 @@
 .navbar-lewagon {
+  z-index: 1000;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.4rem 1rem;
+}
+
+
+.navbar-lewagon {
   justify-content: space-between;
   background: white;
 }
@@ -10,3 +20,4 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+

@@ -1,0 +1,165 @@
+#dashboard-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 250px;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    overflow-y: auto !important;
+}
+
+
+
+.dashboard-menu {
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+
+li.dashboard-menu-item {
+  padding: 1rem 2rem;
+  margin: 0;
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+
+li.dashboard-menu-item {
+  &:hover{
+    background-color: $primary-lightest;
+    border-right:4px solid $primary;
+    box-shadow: 0px 4px 17px -7px rgba(0, 0, 88, 0.3);
+    transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out;
+    a {
+      color: $primary;
+    }
+  }
+}
+
+li.dashboard-menu-item.active {
+  background-color: $primary-lightest;
+  border-right:4px solid $primary;
+    .fas {
+      color: $primary;
+  }
+}
+
+
+
+.matches-menu {
+  list-style: none;
+  padding-top: 0.5rem;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+
+li.matches-menu-item {
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-right:4px solid $white-smoke;
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+
+li.matches-menu-item {
+  &:hover{
+    background-color:$primary-light !important;
+    border-right:4px solid $primary;
+    box-shadow: 0px 4px 17px -7px rgba(0, 0, 88, 0.3);
+    transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out, color 0.2s ease-in-out;
+    a {
+      color: $primary;
+      img {
+        border-color: $primary !important;
+      }
+    }
+  }
+}
+
+li.matches-menu-item.active {
+  background-color: $gray-6;
+    a {
+      color: $primary;
+  }
+}
+
+
+li.matches-menu-item.online {
+  .avatar {
+    border: 1px solid $success !important;
+  }
+
+}
+
+
+
+
+
+.online-badge {
+    display: none;
+  }
+
+
+.online {
+  .online-badge {
+    display: inline;
+  }
+}
+
+
+
+
+
+
+
+
+.messages-container {
+  padding-left:250px;
+  padding-right:350px;
+  overflow: auto;
+
+}
+
+.messages{
+  padding-bottom: 150px;
+}
+
+
+.message-content {
+  max-width: 50%;
+}
+
+.message-form {
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% - 350px);
+}
+
+.flat-details {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 350px;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    overflow-y: auto !important;
+}
+
+
+div.generate-contract {
+  position: fixed;
+  bottom: 0px;
+  width: 350px;
+
+    a {
+      display: block;
+      min-width: 200px !important;
+      margin: 0 auto;
+  }
+}

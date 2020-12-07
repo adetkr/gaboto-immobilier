@@ -21,6 +21,14 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @contact = Contact.new()
+    @contact.user = current_user
+    @contact.flat = @flat
+
+  end
+
+  def edit
+    @flat = Flat.find(params[:id])
   end
 
   def params_flat
