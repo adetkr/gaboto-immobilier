@@ -28,6 +28,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initLightGallery } from '../plugins/init_lightgallery';
 import { initContactForm } from '../plugins/init_contact_form';
+import { initSelect2 } from '../plugins/init_select2';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,6 +39,9 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initLightGallery();
   initContactForm();
+  initSelect2();
+
 });
+
 
 

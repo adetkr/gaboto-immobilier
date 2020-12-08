@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_143119) do
+ActiveRecord::Schema.define(version: 2020_12_07_231334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,21 @@ ActiveRecord::Schema.define(version: 2020_12_07_143119) do
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "flat_equipments", force: :cascade do |t|
+    t.bigint "equipment_id", null: false
+    t.bigint "flat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["equipment_id"], name: "index_flat_equipments_on_equipment_id"
+    t.index ["flat_id"], name: "index_flat_equipments_on_flat_id"
+  end
+
   create_table "flats", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "country"
@@ -84,5 +99,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_143119) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts", "flats"
   add_foreign_key "contacts", "users"
+  add_foreign_key "flat_equipments", "equipment"
+  add_foreign_key "flat_equipments", "flats"
   add_foreign_key "flats", "users"
 end

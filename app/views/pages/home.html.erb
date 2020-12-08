@@ -2,8 +2,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
   <div class="container">
     <div>
-      <h1 class="text-center">GABOTO Immobilier</h1>
-      <h6 class="text-center">Votre agence immobilière en ligne</h6>
+      <h1 class="text-center text-white">GABOTO Immobilier</h1>
+      <h6 class="text-center text-white">Votre agence immobilière en ligne</h6>
 
     </div>
     <div class="bg-white shadow-lg py-3 px-4 rounded-lg">
@@ -17,12 +17,12 @@
               </div>
 
               <div class="col-xs-12 col-sm-3">
-                <%= f.input :operation_type , as: :select , collection: Flat::TYPE, label: false , placeholder: "Catégorie", input_html: {class: 'form-control form-control-lg border-0 py-3 m-0'}%>
+                <%= f.input :operation_type , as: :select , collection: Flat::TYPE, label: false , placeholder: "Catégorie", input_html: {class: 'select2 form-control form-control-lg border-0 py-3 m-0'}%>
 
               </div>
               <div class="col-xs-12 col-sm-3">
 
-              <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE , label: false, placeholder: "Type", input_html: {class: 'form-control form-control-lg border-0 py-3 m-0'}%>
+              <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE , label: false, placeholder: "Type", input_html: {class: ' select2 form-control form-control-lg border-0 py-3 m-0'}%>
 
               </div>
               <div class="col-xs-12 col-sm-3">

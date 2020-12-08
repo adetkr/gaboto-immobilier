@@ -1,40 +1,11 @@
 <section id="card" class="mt-5">
   <div class="container-fluid bg-white">
     <div class="row">
-      <div class="col-6 p-4 my-4">
+      <div class="col-6 p-4 my-4 cards">
         <% @flats.each do |flat| %>
-          <%= link_to flat_path(flat) do %>
-            <div class="card cards-flat rounded border-0 mb-4 d-flex bg-white-smoke align-items-between hover-card " data-cardId="card-<%= flat.id %>" data-lat="<%= flat.latitude %>" data-lng="<%= flat.longitude %>">
-              <div class="d-flex justify-content-start">
-                <div class="col-4 p-0 rounded overflow-hidden">
-                  <div class="thumbnail rounded"
-                  <% if flat.photos.attached? %>
-                  style="background-image: url('<%= cl_image_path flat.photos.first.key, height: 300, width: 400, crop: :fill %>');"
-                   <% else %>
-                  style="background-image: url('<%= image_path "noimage.png", height: 300, width: 400, crop: :fill %>');"
-                  <% end %>
-                  >
-                  </div>
-                </div>
-                <div class="flex-grow-1 py-3 pl-4 pr-3">
-                  <p class="title h5"><%= flat.description %></p>
-                  <p> <%= flat.surface %>m<sup>2</sup> - <%= flat.rooms %> rooms</p>
-                <div class="d-flex justify-content-between align-items-center flex-grow-1">
-                  <p class="h6 pt-4 z-index-999">
-                    <% if flat.user.photo.attached? %>
-                       <%= cl_image_tag flat.user.photo.key, height: 40, width: 40 , crop: :fill, class: "rounded-circle border border-white border-2 avatar-index" %>
-                    <% else %>
-                       <%= image_tag "noavatar.png", height: 40, width: 40 , crop: :fill, class: "rounded-circle border border-white border-2 avatar-index" %>
-                    <% end %>
-                    Proposed by <span class="text-primary font-weight-bold"><%= flat.user %></span>
 
-                  </p>
-                  <p class="price mb-0"><span class="h4 pr"><%= flat.price %>€</span><span class="">/mo</span>
-                </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
+            <%= render 'shared/card', flat: flat %>
+
         <% end %>
       </div>
       <div class="col-6 p-0">

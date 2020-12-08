@@ -12,7 +12,11 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(params_flat)
     @flat.user = current_user
+
     if @flat.save
+      params.require(:flat)["equipment_ids"].each do |equipment_id|
+          FlatEquipment.create(flat_id: @flat.id, equipment_id: equipment_id)
+      end
       redirect_to flat_path(@flat)
     else
       render :new
@@ -32,6 +36,6 @@ class FlatsController < ApplicationController
   end
 
   def params_flat
-    params.require(:flat).permit(:country, :description, :operation_type, :house_type, :address, :rooms, :pieces, :surface, :price, photos: [])
+    params.require(:flat).permit(:country, :description, :operation_type, :house_type, :address, :rooms, :pieces, :surface, :price, :equipments, photos: [])
   end
 end

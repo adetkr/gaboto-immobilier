@@ -22,6 +22,10 @@
   margin: 0;
 }
 
+.card {
+  margin: 8px;
+}
+
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -36,4 +40,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
