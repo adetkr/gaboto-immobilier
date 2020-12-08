@@ -1,8 +1,8 @@
 
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="form-login col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Sign up</h2>
+      <h2>Inscrivez -vous</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Inscription" , :class => "btn-style-01 text-uppercase py-2 px-5 rounded-lg"%>
         </div>
       <% end %>
     </div>

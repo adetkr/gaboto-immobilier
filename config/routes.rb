@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :flats do
 
   end
+
+  get '/myflats', to:"pages#myflats"
+
+  resources :users, only: [:update, :show, :edit]
 end

@@ -18,6 +18,27 @@
   margin-bottom: 0px;
 }
 
+@media screen and (max-width:60px){
+  .dashboard-menu {
+    display: none;
+
+  }
+  #dashboard-nav {
+      display: none;
+      width: 0px;
+      //position: fixed;
+      //top: 0;
+      //bottom: 0;
+
+  }
+  .messages-container {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+
+  }
+}
+
 
 li.dashboard-menu-item {
   padding: 1rem 2rem;

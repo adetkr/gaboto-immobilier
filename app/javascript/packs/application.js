@@ -29,6 +29,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initLightGallery } from '../plugins/init_lightgallery';
 import { initContactForm } from '../plugins/init_contact_form';
 import { initSelect2 } from '../plugins/init_select2';
+import { previewImageOnFileSelect, sendImageOnFileSelect } from '../plugins/photo_preview';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initLightGallery();
   initContactForm();
   initSelect2();
+  previewImageOnFileSelect();
 
 });
 

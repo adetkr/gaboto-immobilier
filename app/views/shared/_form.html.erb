@@ -1,24 +1,62 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
+    <% if flat.id %>
+      <h1> Editer mon appartement </h1>
+    <% else %>
+      <h1> Ajouter un appartement </h1>
+    <% end %>
+
     <div class="form-login col-xs-12 col-sm-8">
       <%= simple_form_for(flat) do |f| %>
         <!-- [...] -->
         <%= f.input :description %>
-        <%= f.input :operation_type , as: :select , collection: Flat::TYPE , input_html:  { class: "select2" }%>
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :operation_type , as: :select , collection: Flat::TYPE , input_html:  { class: "select2" }%>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE, input_html:  { class: "select2" } %>
+          </div>
+        </div>
 
-        <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE, input_html:  { class: "select2" } %>
+
+
         <%= f.input :address %>
-        <%= f.input :rooms %>
-        <%= f.input :pieces %>
-        <%= f.input :surface %>
-        <%= f.input :price %>
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <%= f.input :rooms %>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <%= f.input :pieces %>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <%= f.input :surface %>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <%= f.input :price %>
+          </div>
+        </div>
+
+
+
+
         <%= f.association :equipments,
                   as: :check_boxes,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
 
-        <%= f.input :photos, as: :file, input_html: { multiple: true , class: 'd-none'} , label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'%>
-        <%= f.submit "Add a new flat", :class => "btn-style-01 text-uppercase py-2 px-5 rounded-lg"  %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true , class: 'd-none hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'%>
+        <%= image_tag "", width: 150, class: "hidden", id: "photo-preview" %>
+        <div class="photo-previews">
+
+        </div>
+        <% if flat.id %>
+          <%= f.submit "Modifier", :class => "btn-style-01 text-uppercase py-2 px-5 rounded-lg"  %>
+        <% else %>
+          <%= f.submit "Ajouter", :class => "btn-style-01 text-uppercase py-2 px-5 rounded-lg"  %>
+        <% end %>
+
+
         <!-- [...] -->
       <% end %>
     </div>
