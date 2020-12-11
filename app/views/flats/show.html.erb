@@ -74,9 +74,13 @@
                     <%= f.input :name %>
                     <% if current_user %>
                       <%= f.input :email, input_html: { value: current_user.email }  %>
+                      <%= f.input :number, input_html: { value: current_user.phone }  %>
+                    <% else %>
+                      <%= f.input :email  %>
+                      <%= f.input :number  %>
                     <% end %>
 
-                    <%= f.input :number  %>
+
                     <%= f.input :message  %>
 
                     <!-- [...] -->

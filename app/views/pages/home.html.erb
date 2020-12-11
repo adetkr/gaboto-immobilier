@@ -39,72 +39,59 @@
 </div>
 
 <section id="#howItWorks">
-  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">Vous souhaitez <span class="text-secondary">louer ou acheter </span> un appartement ?</h2>
 <div class="container-fluid bg-white-smoke p-5">
 
     <div class="row">
       <div class="col-md-3 p-4 ">
           <div >
-            <%= image_tag "building.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg">I offer my <span class="text-secondary">appartment</span> for exchange with a foreign student</h5>
-            <p class="lead">I provide informations about my flat, amenities, equipment and avaibilities</p>
+            <%= image_tag "search.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
+            <h5 class="text-primary line-height-lg">Je  <span class="text-secondary">cherche</span> l'appartement en ligne sur le site</h5>
+            <p class="lead">Notre moteur de recherche vous permet de trouver l'appartement qui convient à vos critères</p>
           </div>
       </div>
       <div class="col-md-3  p-4 ">
            <div >
             <%= image_tag "search.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg">I am looking for a <span class="text-secondary">new appartment</span> in the city where I am going to study</h5>
-            <p class="lead">I like all flats matching with my requests</p>
+            <h5 class="text-primary line-height-lg">Je <span class="text-secondary">contacte</span> l'agence si un bien m'intéresse</h5>
+            <p class="lead">Contactez-nous via le formulaire disponible sur la page de présentation du bien</p>
           </div>
       </div>
       <div class="col-md-3  p-4">
           <div >
             <%= image_tag "heart.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg"><span class="text-secondary">It's a Match !</span> My appartment has been liked by someone that I have also liked his flat! </h5>
-            <p class="lead">I start a chat with the person who target my flat. We agree to seal the deal !</p>
+            <h5 class="text-primary line-height-lg">Je <span class="text-secondary">visite</span>  les appartements qui m'intéressent </h5>
+            <p class="lead">Nous planifions et organisons les visites</p>
           </div>
       </div>
        <div class="col-md-3  p-4">
           <div >
             <%= image_tag "key.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg"> We sign a <span class="text-secondary">contract of agreement</span> both of us agree to exchange our appartment</h5>
-            <p class="lead"> I rent my flat and get a new one abraod ! Thanks FlaTender </p>
+            <h5 class="text-primary line-height-lg"> Nous <span class="text-secondary">contractualisons</span> si le bien vous intéresse toujours</h5>
+            <p class="lead"> Nous nous occupons de la rédaction des contrats de location et des loyers </p>
           </div>
       </div>
     </div>
 </section>
 
 <section id="#howItWorks">
-  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+  <h2 class="text-primary h1 font-weight-bold ml-5 my-5">Vous avez un bien <span class="text-secondary">à vendre ou à louer</span> ?</h2>
 <div class="container-fluid bg-white-smoke p-5">
 
     <div class="row">
-      <div class="col-md-3 p-4 ">
+      <div class="col-md-6 p-4 ">
           <div >
             <%= image_tag "building.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg">I offer my <span class="text-secondary">appartment</span> for exchange with a foreign student</h5>
-            <p class="lead">I provide informations about my flat, amenities, equipment and avaibilities</p>
+            <h5 class="text-primary line-height-lg">J'ajoute une annonce en ligne <span class="text-secondary">pour la mise en vente ou en location</span> de mon bien</h5>
+            <p class="lead">Je renseigne de façon détaillée tout les caractéristiques de mon bien</p>
           </div>
       </div>
-      <div class="col-md-3  p-4 ">
-           <div >
-            <%= image_tag "search.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg">I am looking for a <span class="text-secondary">new appartment</span> in the city where I am going to study</h5>
-            <p class="lead">I like all flats matching with my requests</p>
-          </div>
-      </div>
-      <div class="col-md-3  p-4">
-          <div >
-            <%= image_tag "heart.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg"><span class="text-secondary">It's a Match !</span> My appartment has been liked by someone that I have also liked his flat! </h5>
-            <p class="lead">I start a chat with the person who target my flat. We agree to seal the deal !</p>
-          </div>
-      </div>
-       <div class="col-md-3  p-4">
+
+       <div class="col-md-6  p-4">
           <div >
             <%= image_tag "key.svg", class: "rounded bg-white p-4 box-shadow-custom mb-5 " %>
-            <h5 class="text-primary line-height-lg"> We sign a <span class="text-secondary">contract of agreement</span> both of us agree to exchange our appartment</h5>
-            <p class="lead"> I rent my flat and get a new one abraod ! Thanks FlaTender </p>
+            <h5 class="text-primary line-height-lg"> Nous récupérons <span class="text-secondary">les clés</span> et on s'occupe de tout</h5>
+            <p class="lead"> Nous nous occupons de l'organisation des visites et de la gestion locative </p>
           </div>
       </div>
     </div>
@@ -112,7 +99,7 @@
 
 <% if Flat.all.count > 0  %>
   <section id="#howItWorks">
-    <h2 class="text-primary h1 font-weight-bold ml-5 my-5">How it <span class="text-secondary">works</span> ?</h2>
+    <h2 class="text-primary h1 font-weight-bold ml-5 my-5">Dernières <span class="text-secondary">annonces</span> publiées</h2>
   <div class="container-fluid bg-white-smoke p-5">
 
       <div class="row">

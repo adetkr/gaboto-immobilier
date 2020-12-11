@@ -35,6 +35,7 @@
             <h4>Edit my profil</h4>
             <%= simple_form_for @user do |f| %>
             <%= f.input :first_name %>
+            <%= f.input :phone %>
             <%= f.input :photo, as: :file ,input_html: {  class: 'd-none hidden', id: 'photo-input'} , label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo de profil' %>
             <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
               <br>

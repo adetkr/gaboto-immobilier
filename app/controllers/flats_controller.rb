@@ -6,7 +6,14 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
-    @markers = nil
+        @markers = @flats.map do |flat|
+      {
+        cardId: flat.id,
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+      }
+    end
   end
 
   def create
@@ -28,6 +35,12 @@ class FlatsController < ApplicationController
     @contact = Contact.new()
     @contact.user = current_user
     @contact.flat = @flat
+
+     @markers = [    {
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { flat: @flat })
+    }]
 
   end
 
