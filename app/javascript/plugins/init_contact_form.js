@@ -35,7 +35,7 @@ const initContactForm = () => {
 
       })
       .then((error) => {
-
+        console.log(error);
       });
 
     });

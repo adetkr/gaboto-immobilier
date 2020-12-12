@@ -9,4 +9,6 @@ class Flat < ApplicationRecord
   #has_and_belongs_to_many :equipments
   has_many :flat_equipments
   has_many :equipments, through: :flat_equipments
+
+  validates :description, :operation_type, :house_type, :address, :rooms, :pieces, :surface, :price, presence: true
 end

@@ -1,11 +1,14 @@
 <%= simple_form_for(contact) do |f| %>
 <!-- [...] -->
 <%= f.input :name %>
-<% if current_user %>
-<%= f.input :email, placeholder: current_user.email  %>
-<% end %>
 
+<% if current_user %>
+<%= f.input :email, input_html: { value: current_user.email }  %>
+<%= f.input :number, input_html: { value: current_user.phone }  %>
+<% else %>
+<%= f.input :email  %>
 <%= f.input :number  %>
+<% end %>
 <%= f.input :message  %>
 
 <!-- [...] -->

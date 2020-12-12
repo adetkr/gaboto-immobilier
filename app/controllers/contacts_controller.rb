@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def create
     @contact = Contact.new(params_contact)
     @contact.user = current_user

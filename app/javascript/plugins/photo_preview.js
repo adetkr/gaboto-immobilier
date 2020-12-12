@@ -8,6 +8,9 @@ const previewImageOnFileSelect = () => {
       // we call the displayPreview function (who retrieve the image url and display it)
       console.log("change");
       displayPreview(input);
+      for(var i = 0; i < input.files.length; i++){
+        displayPreview(input, i);
+    }
     })
   }
 }
@@ -29,15 +32,18 @@ const sendImageOnFileSelect = () => {
   }
 }
 
-const displayPreview = (input) => {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
+const displayPreview = (input, i) => {
+  if (input.files && input.files[i]) {
+    var reader = new FileReader();
+    const photoPreviews = document.querySelector('.photo-previews');
     reader.onload = (event) => {
       console.log(input.files);
-      document.getElementById('photo-preview').src = event.currentTarget.result;
+      //document.getElementById('photo-preview').src = event.currentTarget.result;
+      photoPreviews.insertAdjacentHTML('beforeend', `<img width="150" id="photo-preview" src="${event.currentTarget.result}" >` );
     }
-    reader.readAsDataURL(input.files[0])
+    reader.readAsDataURL(input.files[i])
     document.getElementById('photo-preview').classList.remove('hidden');
+
   }
 }
 

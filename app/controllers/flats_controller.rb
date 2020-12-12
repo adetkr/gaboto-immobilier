@@ -30,6 +30,13 @@ class FlatsController < ApplicationController
     end
   end
 
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(params_flat)
+
+    redirect_to flat_path(@flat)
+  end
+
   def show
     @flat = Flat.find(params[:id])
     @contact = Contact.new()
