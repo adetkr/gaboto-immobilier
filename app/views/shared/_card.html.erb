@@ -9,17 +9,25 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="d-block w-100" alt="...">
-        </div>
+        <% if flat.photos.attached? %>
+          <div class="carousel-item active">
+            <%= cl_image_tag flat.photos[0].key, height: 180,  class: "d-block w-100" %>
+          </div>
+          <% if  flat.photos.length >= 2 %>
+
+            <% flat.photos[1..(flat.photos.length-1)].each do |photo| %>
+              <div class="carousel-item ">
+                <%= cl_image_tag photo.key, height: 180,  class: "d-block w-100" %>
+              </div>
+            <% end %>
+
+          <% end %>
+        <% else %>
+          <%= image_tag "noimage.png", height: 180, class: "d-block w-100" %>
+        <% end %>
 
       </div>
+
 
 
     </div>
