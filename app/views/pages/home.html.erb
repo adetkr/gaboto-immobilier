@@ -71,6 +71,13 @@
             <p class="lead"> Nous nous occupons de la rédaction des contrats de location et des loyers </p>
           </div>
       </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5 p-4 col-centered">
+
+        <%= link_to "TROUVER UN BIEN", flats_path, class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0" %>
+      </div>
     </div>
 
 </section>
@@ -96,27 +103,34 @@
           </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5 p-4 col-centered">
+
+        <%= link_to "AJOUTER UNE ANNONCE", new_flat_path, class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0" %>
+      </div>
+    </div>
 </section>
 
-<% if Flat.all.count > 0  %>
+<% if @flats.count > 0  %>
   <section id="#howItWorks">
     <h2 class="text-primary h1 font-weight-bold ml-5 my-5">Dernières <span class="text-secondary">annonces</span> publiées</h2>
   <div class="container-fluid bg-white-smoke p-5">
 
+
+
       <div class="row">
-        <div class="col-md-3 p-4 ">
-            <%= render 'shared/card', flat: Flat.last %>
-        </div>
-        <div class="col-md-3  p-4 ">
-            <%= render 'shared/card', flat: Flat.last %>
-        </div>
-        <div class="col-md-3  p-4">
-            <%= render 'shared/card', flat: Flat.last %>
-        </div>
-        <div class="col-md-3  p-4">
-            <%= render 'shared/card', flat: Flat.last %>
-        </div>
+        <% @flats.each do |flat| %>
+           <div class="col-md-3 p-4 ">
+              <%= render 'shared/card', flat: flat %>
+          </div>
+        <% end %>
       </div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5 p-4 col-centered">
+
+        <%= link_to "PLUS DE BIENS", flats_path, class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0" %>
+      </div>
+    </div>
   </section>
 
 <% end %>
