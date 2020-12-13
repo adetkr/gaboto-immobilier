@@ -11,6 +11,7 @@
       <li class="dashboard-menu-item active">
         <a href="<%= myflats_path %>" class="h6">
           <i class="fas fa-building h5 mr-3"></i> My flats
+        </a>
       </li>
       <li class="dashboard-menu-item">
         <a href="<%= myflats_path %>" class="h6">
@@ -19,7 +20,6 @@
       </li>
     </ul>
 
-  </div>
   </div>
 <!-- / navigation dashboard   -->
 
@@ -44,8 +44,8 @@
                        <%=  flat.house_type %>
                       </h4>
                       <div style="min-height: 10px">
-                        <a href="<%= flat_path(flat) %>" class="text-white btn btn-primary mr-4"><i class="far fa-eye"></i> view flat</a>
-                        <a href="<%= edit_flat_path(flat) %>" class="text-primary  btn btn-outline-primary"><i class="fas fa-edit"></i> edit flat</a>
+                        <a href="<%= flat_path(flat) %>" class="text-white btn btn-primary mr-4 mt-2 mb-2"><i class="far fa-eye"></i> view flat</a>
+                        <a href="<%= edit_flat_path(flat) %>" class="text-primary  btn btn-outline-primary mt-2 mb-2"><i class="fas fa-edit"></i> edit flat</a>
 
 
                       </div>

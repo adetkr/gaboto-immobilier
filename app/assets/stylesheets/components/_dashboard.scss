@@ -18,26 +18,7 @@
   margin-bottom: 0px;
 }
 
-@media screen and (max-width:60px){
-  .dashboard-menu {
-    display: none;
 
-  }
-  #dashboard-nav {
-      display: none;
-      width: 0px;
-      //position: fixed;
-      //top: 0;
-      //bottom: 0;
-
-  }
-  .messages-container {
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
-
-  }
-}
 
 
 li.dashboard-menu-item {
@@ -182,5 +163,20 @@ div.generate-contract {
       display: block;
       min-width: 200px !important;
       margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width:900px){
+
+  #dashboard-nav {
+    max-width: 90px;
+
+  }
+  .messages-container {
+
+    padding-left: 90px;
+    padding-right: 0px;
+
   }
 }

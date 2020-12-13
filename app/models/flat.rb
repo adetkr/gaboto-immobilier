@@ -11,4 +11,11 @@ class Flat < ApplicationRecord
   has_many :equipments, through: :flat_equipments
 
   validates :description, :operation_type, :house_type, :address, :rooms, :pieces, :surface, :price, presence: true
+
+  after_create :send_published_email
+  private
+
+  def send_published_email
+    FlatMailer.with(flat: self).published.deliver_now
+  end
 end
