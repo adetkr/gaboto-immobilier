@@ -9,6 +9,6 @@ class FlatMailer < ApplicationMailer
     @greeting = "Hi"
     @flat = params[:flat]
 
-    mail(to: "tkradm@yahoo.fr", subject: 'Une nouvelle annonce vient a été publiée sur GabotoImmobilier ')
+    #mail(to: "tkradm@yahoo.fr", subject: 'Une nouvelle annonce vient a été publiée sur GabotoImmobilier ')
   end
 end

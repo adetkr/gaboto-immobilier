@@ -9,6 +9,6 @@ class ContactMailer < ApplicationMailer
     @contact = params[:contact]
 
 
-    mail(to: "tkradm@yahoo.fr", subject: 'Vous avez reçu un nouveau message')
+    #mail(to: "tkradm@yahoo.fr", subject: 'Vous avez reçu un nouveau message')
   end
 end

@@ -5,17 +5,12 @@
     <ul class="dashboard-menu ">
       <li class="dashboard-menu-item active">
         <a href="<%= user_path(current_user) %>" class="h6">
-          <i class="fas fa-user h5 mr-3"></i> My profile
+          <i class="fas fa-user h5 mr-3"></i> Mon profil
         </a>
       </li>
       <li class="dashboard-menu-item">
         <a href="<%= myflats_path %>" class="h6">
-          <i class="fas fa-building h5 mr-3"></i> My flats
-      </li>
-      <li class="dashboard-menu-item">
-        <a href="<%= myflats_path %>" class="h6">
-          <i class="fas fa-heart h5 mr-3"></i> My Likes
-        </a>
+          <i class="fas fa-building h5 mr-3"></i> Mes biens
       </li>
     </ul>
 
@@ -43,9 +38,6 @@
                         <p class="h5 mb-0"><%= @user.email %></p>
                     </div>
               </div>
-            <div id="pres" class="d-block mt-4 p-4 bg-white-smoke  rounded-lg">
-              <p><%= @user.email %></p>
-            </div>
             </div>
         </div>
 

@@ -9,8 +9,10 @@ class FlatsController < ApplicationController
     search_params = params["search_flat"]
     @city_params = params[:search]
     @city_query_params = params[:query]
-    @house_type = @city_params["house_type"]
-    @operation_type = @city_params["operation_type"]
+    if @city_params
+      @house_type = @city_params["house_type"]
+      @operation_type = @city_params["operation_type"]
+    end
     if search_params
       @max_price = (search_params["max_price"] == "" ? Flat.maximum("rent") : search_params["max_price"])
       @min_price = (search_params["min_price"] == "" ? Flat.minimum("rent")  : search_params["min_price"])
@@ -26,15 +28,15 @@ class FlatsController < ApplicationController
       end
     else
 
-      if @house_type != ""
+      if @house_type && @house_type != ""
 
-        if @operation_type != ""
+        if @operation_type && @operation_type != ""
           @flats = Flat.where("house_type = ? AND operation_type = ?", @house_type, @operation_type).order("created_at DESC").geocoded
         else
           @flats = Flat.where("house_type = ?", @house_type).order("created_at DESC").geocoded
         end
 
-      elsif @operation_type != ""
+      elsif @operation_type && @operation_type != ""
 
           @flats = Flat.where("operation_type = ?", @operation_type).order("created_at DESC").geocoded
 

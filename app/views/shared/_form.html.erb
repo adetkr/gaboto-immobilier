@@ -12,10 +12,10 @@
         <%= f.input :description %>
         <div class="row">
           <div class="col-xs-12 col-md-6">
-            <%= f.input :operation_type , as: :select , collection: Flat::TYPE , input_html:  { class: "select2" }%>
+            <%= f.input :operation_type , as: :select , collection: Flat::TYPE , input_html:  { class: "select2-operation" }%>
           </div>
           <div class="col-xs-12 col-md-6">
-            <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE, input_html:  { class: "select2" } %>
+            <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE, input_html:  { class: "select2-house" } %>
           </div>
         </div>
 

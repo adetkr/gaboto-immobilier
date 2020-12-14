@@ -43,7 +43,6 @@
 
 <section id="flat" class="p-5 my-5">
   <div class="container-fluid">
-    Proposé par <p class="text-primary h6"><%= @flat.user.email %></p>
     <h1 class="pb-3 h2"><%= @flat.house_type %> / <%= @flat.operation_type %> / <%= @flat.address %>
     <% if @flat.user == current_user  %>
       <%= link_to edit_flat_path(@flat.id) , class: "btn btn-primary" do %>
@@ -60,13 +59,13 @@
 
         <!-- presentation -->
         <div id="presentation" class="bg-white-smoke rounded-lg p-4 mb-5">
-          <h3 class="mb-2 h5"><%= @flat.surface %>m<sup>2</sup> - <%= @flat.rooms %> rooms</h3>
+          <h3 class="mb-2 h5"><%= @flat.surface %>m<sup>2</sup> - <%= @flat.pieces %> pièces - <%= @flat.rooms %> chambres </h3>
           <p><%= @flat.description %></p>
         </div>
 
         <!--  Equipment -->
         <div id="equipment" class="bg-white-smoke rounded-lg p-4 mb-5">
-          <h3 class="mb-4 h5">Equipments</h3>
+          <h3 class="mb-4 h5">Equipements</h3>
           <div class="d-flex flex-wrap">
             <% FlatEquipment.where(flat_id: @flat.id).each do |flat_equipment| %>
               <div class="equipment col-4 pl-0 mb-3 <%= flat_equipment.equipment.name %>">
