@@ -1,9 +1,41 @@
 <section id="card" class="mt-5">
   <div class="container-fluid bg-white">
+    <div class="search-form">
+
+    <div class="bg-white shadow-lg py-3 px-4 rounded-lg">
+      <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
+        <form class="">
+          <div class="row d-flex align-items-center">
+
+              <div class="col-xs-12 col-sm-3">
+
+              <input placeholder= "Adresse " class=" form-control form-control-lg border-0 py-3 m-0" type="text" name="search[query]" id="flat_address" >
+              </div>
+
+              <div class="col-xs-12 col-sm-3">
+                <%= f.input :operation_type , as: :select , collection: Flat::TYPE, label: false , placeholder: "Catégorie", input_html: {class: 'select2-operation form-control form-control-lg border-0 py-3 m-0'}%>
+
+              </div>
+              <div class="col-xs-12 col-sm-3">
+
+              <%= f.input :house_type , as: :select , collection: Flat::HOUSE_TYPE , label: false, placeholder: "Type", input_html: {class: ' select2-house form-control form-control-lg border-0 py-3 m-0'}%>
+
+              </div>
+              <div class="col-xs-12 col-sm-3">
+
+              <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 mb-0 w-100">Search</button>
+
+              </div>
+
+          </div>
+        </form>
+      <% end %>
+    </div>
       <div>
-          <h5 class="text-primary line-height-lg"> <span class="text-secondary"><%= @count %> </span> biens correspondent à votre recherche</h5>
+          <h5 class="text-primary line-height-lg mt-4"> <span class="text-secondary"><%= @count %> </span> biens correspondent à votre recherche</h5>
 
       </div>
+    </div>
     <div class="row">
       <div class="col-12 col-md-6 p-4 my-4 cards">
         <% @flats.each do |flat| %>

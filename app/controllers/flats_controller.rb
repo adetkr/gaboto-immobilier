@@ -13,6 +13,7 @@ class FlatsController < ApplicationController
       @house_type = @city_params["house_type"]
       @operation_type = @city_params["operation_type"]
     end
+
     if search_params
       @max_price = (search_params["max_price"] == "" ? Flat.maximum("rent") : search_params["max_price"])
       @min_price = (search_params["min_price"] == "" ? Flat.minimum("rent")  : search_params["min_price"])
@@ -49,9 +50,11 @@ class FlatsController < ApplicationController
 
       if @city_params && @city_params[:query] != ""
         @flats = @flats.near(@city_params[:query], 5)
+        raise
       elsif @city_query_params && @city_query_params != ""
 
         @flats = @flats.near(@city_query_params, 5)
+        raise
       end
 
       @count = @flats.length

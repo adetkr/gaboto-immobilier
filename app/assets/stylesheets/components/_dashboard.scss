@@ -166,6 +166,17 @@ div.generate-contract {
   }
 }
 
+  .search-form {
+    width: 49%;
+  }
+
+@media screen and (max-width:600px){
+
+  .search-form {
+    width: 100%;
+  }
+
+}
 
 @media screen and (max-width:900px){
 

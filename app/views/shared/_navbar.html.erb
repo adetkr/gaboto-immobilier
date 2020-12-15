@@ -9,8 +9,9 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <%= link_to "ACHETER", flats_path, class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0 w-100" %>
-    <%= link_to "LOUER", flats_path, class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0 w-100" %>
+
+    <%= link_to "ACHETER", flats_path(:search => { :operation_type => "A VENDRE", :house_type => "", :query => "" }), class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0 w-100" %>
+    <%= link_to "LOUER", flats_path(:search => { :operation_type => "A LOUER", :house_type => "", :query => "" }), class: "btn-style-01 rounded font-weight-bold h6 text-uppercase py-2 px-2  mr-4 mb-0 w-100" %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
