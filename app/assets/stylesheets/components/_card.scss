@@ -53,3 +53,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+#flat-price {
+  color: $primary;
+  text-align: center;
+}
