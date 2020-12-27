@@ -6,6 +6,7 @@ class FlatsController < ApplicationController
 
   def index
 
+    @search_exist = params["search_exist"]
     search_params = params["search_flat"]
     @city_params = params[:search]
     @city_query_params = params[:query]

@@ -23,7 +23,7 @@
               </div>
               <div class="col-xs-12 col-sm-3">
 
-              <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 mb-0 w-100">Search</button>
+              <button type="submit" class="btn-style-01 rounded font-weight-bold h6 text-uppercase py-4 px-0 mb-0 w-100">FILTRER</button>
 
               </div>
 
@@ -32,7 +32,12 @@
       <% end %>
     </div>
       <div>
+          <% if @search_exist %>
+          <h5 class="text-primary line-height-lg mt-4"> <span class="text-secondary"><%= @count %> </span> biens disponibles</h5>
+          <% else %>
+
           <h5 class="text-primary line-height-lg mt-4"> <span class="text-secondary"><%= @count %> </span> biens correspondent à votre recherche</h5>
+          <% end %>
 
       </div>
     </div>
