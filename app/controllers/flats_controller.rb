@@ -51,11 +51,9 @@ class FlatsController < ApplicationController
 
       if @city_params && @city_params[:query] != ""
         @flats = @flats.near(@city_params[:query], 5)
-        raise
       elsif @city_query_params && @city_query_params != ""
 
         @flats = @flats.near(@city_query_params, 5)
-        raise
       end
 
       @count = @flats.length
